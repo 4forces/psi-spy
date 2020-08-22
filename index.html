@@ -166,18 +166,25 @@
 
         function addMarker(markerPosition, markerTitle, mapReference){
 
-            let marker = new google.maps.Marker({
-                position: markerPosition,
-                maps: mapReference,
-                animation: google.maps.Animation.DROP,
-                title: markerTitle
-            })
+        //create infoWindow
+        let infowindow = new google.maps.InfoWindow({
+          content: `<div id=''>Some text</div>`
+        })
 
-            //add Click event listener when we click on a marker
-            marker.addListener('click',function(){
-              infowindow.open(mapReference,marker);
-            })
-        }
+        //create marker
+        let marker = new google.maps.Marker({
+          position: markerPosition,
+          map: mapReference,
+          animation: google.maps.Animation.DROP,
+          title: markerTitle
+        })
+
+        //add Click event listener and open infowin when we click on a marker
+        marker.addListener('click', function(){
+            infowindow.open(mapReference, marker);
+        });
+      }//end addMarker
+
 
     </script>
   </body>

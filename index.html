@@ -119,5 +119,57 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- own js script-->
     <script src="js/main.js"></script>
+
+    <script>
+        let map;
+        let markers = [];
+        let locations = [
+          {name: "west",lat: 1.35735,lng: 103.7,},
+          {name: "national",lat: 0,lng: 0},
+          {name: "east",lat:1.35735,lng: 103.94},
+          {name: "central",lat: 1.35735,lng: 103.82},
+          {name: "south",lat:1.29587,lng: 103.82},
+          {name: "north",lat:1.41803,lng:103.82}
+        ];
+function addMarker(markerPosition, markerTitle, mapReference){
+        
+        let marker = new google.maps.Marker({
+          position: markerPosition,
+          map: mapReference,
+          animation: google.maps.Animation.DROP,
+          title: markerTitle
+        })
+      }
+
+        function initMap(){
+            let singaporeLocation = {lat: 1.3521, lng: 103.8198}
+
+            map = new google.maps.Map(document.getElementById("map"),
+            {//settings/options
+                center:SingaporeLocation,
+                zoom:10,
+                zoomControl: false,
+                scaleControl: false
+            });
+
+            for(let i = 0; i < location.length; i++){
+                console.log(locations[i]);
+                //addMarker();
+            }
+
+        }//end initMap
+
+        function addMarker(markerPosition, markerTitle, mapReference){
+
+            let marker = new google.maps.Marker({
+                position: markerPosition,
+                maps: mapRefernce,
+                animation:google.maps.Animation.DROP,
+                title: markerTitle
+            })
+        }
+
+
+    </script>
   </body>
 </html>

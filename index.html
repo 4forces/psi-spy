@@ -180,7 +180,15 @@
         })
 
         //add Click event listener and open infowin when we click on a marker
+        //retrieve from localstorage psi infor and update
         marker.addListener('click', function(){
+            //$(marker.title)--> reference to east/west/etc...
+
+            let psiStorage =`${marker.title}PSI`; // eastPSI west PSI etc...
+            infowindow.setContent(`<h6>${psiStorage}</h6>PSI: ${localStorage.getItem(psiStorage)}`)
+
+            //else do normal ajax here
+
             infowindow.open(mapReference, marker);
         });
       }//end addMarker

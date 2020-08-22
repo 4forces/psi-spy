@@ -63,6 +63,11 @@ $(document).ready(function () {
             $('#todo-list2').append(`${key}: <b>${value}</b><br/>`);
           });
           */
+        letStorage.setItem("eastPSI", psi_twenty_four_hourly.east);
+        letStorage.setItem("westPSI", psi_twenty_four_hourly.west);
+        letStorage.setItem("northPSI", psi_twenty_four_hourly.north);
+        letStorage.setItem("centralPSI", psi_twenty_four_hourly.national);
+        letStorage.setItem("southPSI", psi_twenty_four_hourly.south);
     },
   });//end of ajax call
 
@@ -83,4 +88,5 @@ $(document).ready(function () {
     }
     return -1;
   }
+
 });
